@@ -18,8 +18,11 @@ def alert_in_celcius(farenheit):
         global alert_failure_count
         alert_failure_count += 0
 
+# Use the stub for testing
+alert_in_celcius(400.5, network_alert_stub)
+alert_in_celcius(303.6, network_alert_stub)
 
-alert_in_celcius(400.5)
-alert_in_celcius(303.6)
+assert(alert_failure_count == 2)
+
 print(f'{alert_failure_count} alerts failed.')
 print('All is well (maybe!)')
